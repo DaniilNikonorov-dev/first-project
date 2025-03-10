@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"7b66630e04172736","type":"text","text":"1️⃣ **Инжектор** — отвечает за создание и предоставление зависимостей.  \n2️⃣ **Иерархия инжекторов** — организует область видимости сервисов.  \n3️⃣ **Дерево инжекторов** — определяет, как Angular ищет и использует зависимости.  \n4️⃣ **Dependency Injection (DI)** — мощный механизм, который упрощает управление зависимостями.","x":200,"y":-1580,"width":465,"height":250},
+		{"id":"5c763c61f9ed1411","type":"file","file":"Ответы на ЕГЭ/Собесные задачи/Angular/Рефакт основа.md","x":-900,"y":-1780,"width":780,"height":1540},
+		{"id":"9d5dbd342caf39f1","x":700,"y":-1780,"width":580,"height":1720,"type":"text","text":"Отписки\nДревний способ: собирать все подписки в одном массиве и при уничтожении копонента - отписаться.\nЗавести переменную \n```TS\nsubscriptions: Subscription = new Subscription();\n```\nподписка должна возвращать sub = \n\nВ конце\n```TS\nthis.subscription.add(sub)\nДобавить implements OnDestroy\n\n\tngOnDestroy () {\nthis.subscriptions.forEach(sub:Subscriptions => {\n\tsub.unsubscribe();\n\t})\n}\n```\n\n\nВторой способ:\n```TS\nЗавести новый сабжект\ndestroy$ = new Subject<void>()\n\nngOnDestroy() {\n\tthis.destroy$.next();\n\tthis.destroy.complete()\n}\n\nв подписку добавить takeUntill(this.destroy$)\n```\n\n\n\nМожно сделать destroy.service\n\n```TS\nexpirt class DestroyService extends Subjects<void> implements OnDestroy {\n\tconstructor () {\n\tsuper()}\n\nngOnDestroy () {\nthis.next()\nthis.complete()\n}\n```\n\nИ провайдить это в компонент.\nproviders: [DestroyService]\n\ntakeUntillDestroyed - использовать в конструкторе подписки\n\n```TS\ndestroyRef = inject(DestroyRef)\ntakeUntillDestroyed(destroyRef)\n```\n\n\nasync pipe\n\nперегнать любой obs в signal \n\nsig = toSignal(this.obs$)\n{{sig()}}"}
+	],
+	"edges":[
+		{"id":"9fd5a73b4dca468d","fromNode":"5c763c61f9ed1411","fromSide":"right","toNode":"7b66630e04172736","toSide":"left"}
+	]
+}
