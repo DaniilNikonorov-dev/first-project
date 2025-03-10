@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"d842970f24429dc6","x":-1060,"y":-1000,"width":1840,"height":1720,"type":"group","label":"Группа без названия"},
+		{"id":"5f2a725ba48b95d1","x":-160,"y":580,"width":250,"height":60,"type":"text","text":""},
+		{"id":"7d5c1753893be25f","x":-660,"y":-640,"width":400,"height":1000,"type":"file","file":"Ответы на ЕГЭ/Общие вопросы по знаниям.md"},
+		{"id":"67f83bc1bf03fd7c","x":140,"y":-640,"width":400,"height":1060,"type":"file","file":"Angular/1.Роудмапа.md"}
+	],
+	"edges":[]
+}

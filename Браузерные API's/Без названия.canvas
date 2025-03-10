@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"91d84bcf25ad9db4","x":-300,"y":-380,"width":400,"height":400,"type":"file","file":"Что делает команда npm install.md"},
+		{"id":"f98510a010dcb53d","x":140,"y":-380,"width":400,"height":400,"type":"file","file":"Что делает команда npm install.md"}
+	],
+	"edges":[
+		{"id":"379bfdb568190fa7","fromNode":"91d84bcf25ad9db4","fromSide":"bottom","toNode":"f98510a010dcb53d","toSide":"bottom"}
+	]
+}
